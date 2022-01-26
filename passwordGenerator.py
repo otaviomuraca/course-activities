@@ -63,3 +63,18 @@ password = "".join(random.choices(characters, k= size))
 # Mensagem com o password gerado.
 print("A senha gerada com " + str(size) + " digitos é: " +  password)
 
+# O usuário gostou da senha? 
+novaSenha = str(input("Gostaria de mudar a senha? <S/N>").upper())
+
+while novaSenha == "S":
+  password = "".join(random.choices(characters, k=size))
+  print("A senha gerada com " + str(size) + " digitos é: " +  password)
+  novaSenha = str(input("Gostaria de mudar a senha? <S/N>").upper())
+
+save = str(input("Deseja salvar a senha? <S/N>").upper())
+
+if save =="S":
+  logPassword = {}
+  logPassword[input("Nome da Senha: ")] = password
+  with open("passwords.txt", "a") as log:
+    log.write(str(logPassword))
