@@ -63,7 +63,6 @@ password = "".join(random.choices(characters, k= size))
 # Mensagem com o password gerado.
 print("A senha gerada com " + str(size) + " digitos é: " +  password)
 
-# O usuário gostou da senha? 
 novaSenha = str(input("Gostaria de mudar a senha? <S/N>").upper())
 
 while novaSenha == "S":
